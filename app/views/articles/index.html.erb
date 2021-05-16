@@ -1,5 +1,4 @@
 <h1>Articles listing page</h1>
-
 <table>
     <thead>
         <tr>
@@ -19,8 +18,12 @@
                 <td><%= article.description %></td>
                 <td><%= article.created_at %></td>
                 <td><%= article.updated_at %></td>
-                <td>Placeholder</td>
+                <td><%= link_to 'Show',show_article_path(article) %></td>
+                <td><%= link_to 'Edit',edit_article_path(article) %></td>
+                <td><%= link_to 'Delete',delete_article_path(article), method: :delete %></td>
             </tr>
         <% end %>
     </tbody>
 </table>
+<button><%= link_to 'Create New Blog',new_article_path %>
+</button>

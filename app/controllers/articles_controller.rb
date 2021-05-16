@@ -30,4 +30,10 @@ class ArticlesController < ApplicationController
             render 'edit'
        end
     end
+    def destroy
+        @article = Article.find(params[:id])
+        flash[:alert] = 'Warning your item will be deleted'
+        @article.destroy
+        redirect_to articles_path(@article)
+    end
 end
